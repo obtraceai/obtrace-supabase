@@ -1,0 +1,52 @@
+{
+    "name": "@obtrace/supabase",
+    "version": "1.0.0",
+    "description": "Obtrace SDK for Supabase Edge Functions (Deno runtime)",
+    "type": "module",
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/types/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/cjs/index.cjs"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/build-cjs.mjs",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "test": "node --import tsx --test test/*.test.ts"
+    },
+    "dependencies": {
+        "@obtrace/sdk": "^2.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.5.0",
+        "tsx": "^4.20.5",
+        "typescript": "^6.0.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/obtraceai/obtrace-supabase.git"
+    },
+    "homepage": "https://docs.obtrace.ai/docs/platforms/supabase",
+    "bugs": {
+        "url": "https://github.com/obtraceai/obtrace-supabase/issues"
+    },
+    "keywords": [
+        "obtrace",
+        "observability",
+        "opentelemetry",
+        "supabase",
+        "edge-functions",
+        "deno",
+        "telemetry"
+    ]
+}
